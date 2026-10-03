@@ -1,0 +1,100 @@
+{
+  "init_commands": {
+    "command": ["ATZ", "ATD", "ATE0", "ATS0", "ATAL"]
+  },
+  "data_commands": {
+    "command": [
+      "ATSH7E5",
+      "ATFCSH7E5",
+      "220001",
+      "221038",
+      "221048",
+      "224401",
+      "224402",
+      "224404",
+      "224406",
+      "22440E"
+    ]
+  },
+  "obd_protocol": "6",
+  "soc": {
+    "equation": "Int16(A,B)/100",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "221038",
+    "ecu": "7E5"
+  },
+  "soh": {
+    "equation": "Int16(A,B)",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "221048",
+    "ecu": "7E5"
+  },
+  "voltage": {
+    "equation": "Int16(A,B)/10",
+    "minValue": "0",
+    "maxValue": "1000",
+    "type": "Number",
+    "command": "224404",
+    "ecu": "7E5"
+  },
+  "current": {
+    "equation": "Int16(A,B)/10-2047",
+    "minValue": "-1000",
+    "maxValue": "1000",
+    "type": "Number",
+    "command": "224406",
+    "ecu": "7E5"
+  },
+  "power": {
+    "equation": "Int16(A,B)*0.02*(30000-Int16(AA,AB))*0.1/1000",
+    "minValue": "-300",
+    "maxValue": "300",
+    "type": "Number",
+    "command": "220001",
+    "ecu": "7E5"
+  },
+  "batt_temp": {
+    "equation": "A-40",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "22440E",
+    "ecu": "7E5"
+  },
+  "odometer": {
+    "equation": "Int24(B,C,D)/10",
+    "minValue": "0",
+    "maxValue": "1000000",
+    "type": "Number",
+    "command": "224402",
+    "ecu": "7E5"
+  },
+  "speed": {
+    "equation": "Int16(A,B)/16",
+    "minValue": "0",
+    "maxValue": "250",
+    "type": "Number",
+    "command": "224401",
+    "ecu": "7E5"
+  },
+  "is_dcfc": {
+    "equation": "Int16(E,F)*0.02>100",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "220001",
+    "ecu": "7E5"
+  },
+  "is_charging": {
+    "equation": "Int16(AA,AB)>30010",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "220001",
+    "ecu": "7E5"
+  }
+}

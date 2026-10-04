@@ -15,7 +15,7 @@ Starting point was the Omoda E5 BMS DID list (github.com/sl3per/OmodaE5Mod); sev
 | odometer | 224402 | matched dash |
 | speed | 224401 | matched dash |
 | is_dcfc | 220001 | DC inlet voltage (bytes E,F ×0.02) > 100 V; matched charger display |
-| is_charging | 220001 | charge current > 1 A. Interim: may read 1 during strong regen |
+| is_charging | 7E6 224314 | on-board charger flag: 1 while AC charging, 0 unplugged and plugged-not-charging (Car Scanner, default session). Not yet checked on DC; is_dcfc covers DC |
 
 Not found yet: ext_temp, is_parked.
 

@@ -1,6 +1,12 @@
 {
   "init_commands": {
-    "command": ["ATZ", "ATD", "ATE0", "ATS0", "ATAL"]
+    "command": [
+      "ATZ",
+      "ATD",
+      "ATE0",
+      "ATS0",
+      "ATAL"
+    ]
   },
   "data_commands": {
     "command": [
@@ -13,7 +19,10 @@
       "224402",
       "224404",
       "224406",
-      "22440E"
+      "22440E",
+      "ATSH7E6",
+      "ATFCSH7E6",
+      "224314"
     ]
   },
   "obd_protocol": "6",
@@ -90,11 +99,11 @@
     "ecu": "7E5"
   },
   "is_charging": {
-    "equation": "Int16(AA,AB)>30010",
+    "equation": "A",
     "minValue": "0",
     "maxValue": "1",
     "type": "Boolean",
-    "command": "220001",
-    "ecu": "7E5"
+    "command": "224314",
+    "ecu": "7E6"
   }
 }

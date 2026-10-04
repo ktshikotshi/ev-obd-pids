@@ -1,6 +1,6 @@
 # Chery Q (QQ3 EV) OBD Data
 
-Community-tested PIDs for the 2026 Chery Q EV (sold as QQ3 EV in China; Gotion LFP pack), reverse engineered in 2026 with a BLE ELM327 and a read-only UDS explorer. All reads are service 0x22 on protocol 6 (ISO 15765-4 CAN 11-bit 500k). Most fields come from the BMS (request 7E5, response 7ED); is_charging comes from the on-board charger / DC-DC unit (request 7E6, response 7EE).
+Community-tested PIDs for the 2026 Chery Q EV (sold as QQ3 EV in China; Gotion LFP pack). Found in 2026 with a Bluetooth ELM327 adapter and a custom scanning tool that only sends standard read requests (service 0x22), on protocol 6 (ISO 15765-4 CAN 11-bit 500k). Most fields come from the BMS (request 7E5, response 7ED); is_charging comes from the on-board charger / DC-DC unit (request 7E6, response 7EE).
 
 Starting point was the Omoda E5 BMS DID list (github.com/sl3per/OmodaE5Mod); several of those DIDs carry over, the SoC block (22441E) does not.
 

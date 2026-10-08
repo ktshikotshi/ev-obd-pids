@@ -22,7 +22,11 @@
       "22440E",
       "ATSH7E6",
       "ATFCSH7E6",
-      "224314"
+      "224314",
+      "ATSH7E0",
+      "ATFCSH7E0",
+      "1003",
+      "22520D"
     ]
   },
   "obd_protocol": "6",
@@ -105,5 +109,13 @@
     "type": "Boolean",
     "command": "224314",
     "ecu": "7E6"
+  },
+  "is_parked": {
+    "equation": "A==1",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "22520D",
+    "ecu": "7E0"
   }
 }

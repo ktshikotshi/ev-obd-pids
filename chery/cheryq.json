@@ -26,7 +26,17 @@
       "ATSH7E0",
       "ATFCSH7E0",
       "1003",
-      "22520D"
+      "22520D",
+      "ATSH760",
+      "ATFCSH760",
+      "ATCRA770",
+      "ATSTFF",
+      "223404",
+      "223405",
+      "223406",
+      "223407",
+      "ATAR",
+      "ATST32"
     ]
   },
   "obd_protocol": "6",
@@ -117,5 +127,37 @@
     "type": "Boolean",
     "command": "22520D",
     "ecu": "7E0"
+  },
+  "tire_pressure_fl": {
+    "equation": "A*1.38",
+    "minValue": "0",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "223404",
+    "ecu": "760"
+  },
+  "tire_pressure_fr": {
+    "equation": "A*1.38",
+    "minValue": "0",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "223405",
+    "ecu": "760"
+  },
+  "tire_pressure_rl": {
+    "equation": "A*1.38",
+    "minValue": "0",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "223406",
+    "ecu": "760"
+  },
+  "tire_pressure_rr": {
+    "equation": "A*1.38",
+    "minValue": "0",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "223407",
+    "ecu": "760"
   }
 }

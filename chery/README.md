@@ -1,6 +1,6 @@
 # Chery Q (QQ3 EV) OBD Data
 
-Community-tested PIDs for the 2026 Chery Q EV (sold as QQ3 EV in China; Gotion LFP pack). Found in 2026 with a Bluetooth ELM327 adapter and a custom scanning tool that only sends standard read requests (service 0x22, plus 0x10 03 to open the extended diagnostic session), on protocol 6 (ISO 15765-4 CAN 11-bit 500k). Most fields come from the BMS (request 7E5, response 7ED); is_charging comes from the on-board charger / DC-DC unit (request 7E6, response 7EE); is_parked comes from the VCU (request 7E0, response 7E8); tyre pressures come from the body module BDM (request 760, response 770).
+Community-tested PIDs for the 2026 Chery Q EV (sold as QQ3 EV in China; Gotion LFP pack). Found in 2026 with a Bluetooth ELM327 adapter and a custom scanning tool that only sends standard read requests (service 0x22, plus 0x10 03 to open the extended diagnostic session), on protocol 6 (ISO 15765-4 CAN 11-bit 500k). Most fields come from the BMS (request 7E5, response 7ED); is_charging comes from the on-board charger / DC-DC unit (request 7E6, response 7EE); is_parked and ext_temp come from the VCU (request 7E0, response 7E8); tyre pressures come from the body module BDM (request 760, response 770).
 
 Starting point was the Omoda E5 BMS DID list (github.com/sl3per/OmodaE5Mod); several of those DIDs carry over, the SoC block (22441E) does not.
 
@@ -18,9 +18,9 @@ Starting point was the Omoda E5 BMS DID list (github.com/sl3per/OmodaE5Mod); sev
 | is_charging | 7E6 224314 | on-board charger flag: 1 while AC charging, 0 unplugged and plugged-not-charging (Car Scanner, default session). Not yet checked on DC; is_dcfc covers DC |
 | tire_pressure_fl/fr/rl/rr | 760 223404/3405/3406/3407 | A × 1.38 kPa; all four matched the dash TPMS screen per wheel (2.55/2.51/2.49/2.51 bar), default session |
 | is_parked | 7E0 22520D | VCU gear byte: 1 P, 2 R, 3 N, 4 D; followed every shift in a P/R/N/D/P test. Only answers in the extended session, so `1003` is sent to 7E0 just before it |
+| ext_temp | 7E0 226802 | A/2-55 °C; matched the dash outside temperature exactly at 14.5, 17 and 16.5 °C on three days, did not move with the A/C on, and followed the outside temperature as it rose. (226859 reads close but rises with the A/C, so it is not the ambient sensor) |
 
 ## Not found yet (help wanted)
-- **ext_temp**: not in the BMS, the charger module, the VCU or the body module (760). Probably on the climate panel (789, response 799).
 - **soe, est_battery_range, capacity, hvac_power**: not found.
 
 ## Notes for contributors

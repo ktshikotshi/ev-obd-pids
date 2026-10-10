@@ -20,6 +20,8 @@
       "224404",
       "224406",
       "22440E",
+      "1003",
+      "22FD0A",
       "ATSH7E6",
       "ATFCSH7E6",
       "224314",
@@ -136,6 +138,14 @@
     "type": "Number",
     "command": "226802",
     "ecu": "7E0"
+  },
+  "kwh_charged": {
+    "equation": "(B*65536+C*256+D)*0.00042",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "22FD0A",
+    "ecu": "7E5"
   },
   "tire_pressure_fl": {
     "equation": "A*1.38",
